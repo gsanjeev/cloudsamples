@@ -38,6 +38,7 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
         endpoints.tokenStore(tokenStore()).tokenEnhancer(jwtTokenEnhancer()).authenticationManager(authenticationManager);
     }
 
+
     @Autowired
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;

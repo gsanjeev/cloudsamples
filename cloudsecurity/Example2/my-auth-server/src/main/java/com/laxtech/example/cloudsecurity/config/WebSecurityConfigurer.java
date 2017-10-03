@@ -1,6 +1,8 @@
 package com.laxtech.example.cloudsecurity.config;
 
 import javax.servlet.Filter;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.AuthoritiesExtractor;
@@ -44,7 +46,8 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/login**").permitAll()
                     .anyRequest().authenticated()
-                .and().csrf()
+                .and().csrf().disable().exceptionHandling()
+                .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and().formLogin().loginPage("/login")
                 .and().addFilterBefore(googleSsoFilter(), BasicAuthenticationFilter.class);
     }
