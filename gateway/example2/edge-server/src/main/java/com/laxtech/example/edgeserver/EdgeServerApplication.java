@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 // path could be mapped to either url or serviceid
 // From browser call http://localhost:8079/api/server/rest/hello/server
 //And http://localhost:8079/api/client/rest/hello/client
-// hello-client is not using zuul gateway for calling hello-server. which is not good.
+
 public class EdgeServerApplication {
 
 	public static void main(String[] args) {
