@@ -1,4 +1,4 @@
-package com.laxtech.example.productservice.model;
+package com.laxtech.example.model;
 
 /**
  * Created by magnus on 04/03/15.

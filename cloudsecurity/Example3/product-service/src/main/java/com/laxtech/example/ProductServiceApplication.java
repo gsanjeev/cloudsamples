@@ -1,4 +1,4 @@
-package com.laxtech.example.productservice;
+package com.laxtech.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

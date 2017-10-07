@@ -1,4 +1,4 @@
-package com.laxtech.example.productservice;
+package com.laxtech.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
