@@ -20,6 +20,7 @@ import java.security.Principal;
 @SpringBootApplication
 @RestController
 @EnableResourceServer
+@EnableAuthorizationServer
 public class AuthServerApplication {
 
     @RequestMapping("/user")
@@ -31,7 +32,8 @@ public class AuthServerApplication {
         SpringApplication.run(AuthServerApplication.class, args);
     }
 
-    @Configuration
+
+}/*    @Configuration
     @EnableAuthorizationServer
     protected static class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
@@ -51,6 +53,5 @@ public class AuthServerApplication {
                     .authorizedGrantTypes("authorization_code", "refresh_token", "implicit", "password", "client_credentials")
                     .scopes("webshop");
         }
-    }
-}
+    }*/
 

@@ -21,7 +21,9 @@ zuul:
   ignoredServices: "*"
   prefix: /api
   routes:
-    productapi: /product/**
+    productapi:
+    path: /product/**
+    url: http://localhost:8071
 
 logging:
   level:
