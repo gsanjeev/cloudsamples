@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-@SpringBootApplication
-@RestController
-@EnableResourceServer
-@EnableAuthorizationServer
 //OAuth2 Auth Server - auth-server (also enabled as resource?), OAuth2 Client Postman and browser,
 // OAuth2 Resource Server - product-api-service, product-service is core service which is not exposed through Zuul
 // There is no role of gateway zuul in OAuth2 in general but here zuul filtering the requests and client can only access
@@ -32,6 +28,11 @@ import java.security.Principal;
 // internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri
 //reference http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
 //question? why there is separate layer for resource server why can't annotate product-service as resource service.
+
+@SpringBootApplication
+@RestController
+@EnableResourceServer
+@EnableAuthorizationServer
 public class AuthServerApplication {
 
     @RequestMapping("/user")

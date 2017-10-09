@@ -23,6 +23,7 @@ zuul:
   routes:
     productapi:
       path: /product/**
+      sensitiveHeaders:
       url: http://localhost:8071
 
 logging:
