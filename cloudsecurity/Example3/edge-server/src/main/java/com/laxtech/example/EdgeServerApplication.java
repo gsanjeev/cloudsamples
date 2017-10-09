@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.stereotype.Controller;
 
 @SpringBootApplication
-@Controller
+//@Controller
 @EnableZuulProxy
 public class EdgeServerApplication {
 

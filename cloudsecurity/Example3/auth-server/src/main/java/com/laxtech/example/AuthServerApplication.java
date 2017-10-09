@@ -21,6 +21,17 @@ import java.security.Principal;
 @RestController
 @EnableResourceServer
 @EnableAuthorizationServer
+//OAuth2 Auth Server - auth-server (also enabled as resource?), OAuth2 Client Postman and browser,
+// OAuth2 Resource Server - product-api-service, product-service is core service which is not exposed through Zuul
+// There is no role of gateway zuul in OAuth2 in general but here zuul filtering the requests and client can only access
+// resource server authenticated apis if only Zuul gateway is accessible to client. Zuul passes authentication header
+// as is to resource server apis. Spring MVC inject authentication header and principal parameter in resource api method call
+// step1: get authorization code(optional) from auth-server.
+// step2: get token from auth-server.
+// step3: access api using token from product-api-service (resource server).
+// internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri
+//reference http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
+//question? why there is separate layer for resource server why can't annotate product-service as resource service.
 public class AuthServerApplication {
 
     @RequestMapping("/user")
