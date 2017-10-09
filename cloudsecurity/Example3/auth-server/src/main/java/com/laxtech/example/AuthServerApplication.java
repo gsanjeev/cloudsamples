@@ -20,7 +20,7 @@ import java.security.Principal;
 //OAuth2 Auth Server - auth-server (also enabled as resource?), OAuth2 Client Postman and browser,
 // OAuth2 Resource Server - product-api-service, product-service is core service which is not exposed through Zuul
 // There is no role of gateway zuul in OAuth2 in general but here zuul filtering the requests and client can only access
-// resource server authenticated apis if only Zuul gateway is accessible to client. Zuul passes authentication header
+// resource server authenticated apis if only Zuul gateway is accessible to client. With the help of property (sensitiveHeaders) Zuul passes authentication header
 // as is to resource server apis. Spring MVC inject authentication header and principal parameter in resource api method call
 // step1: get authorization code(optional) from auth-server.
 // step2: get token from auth-server.
