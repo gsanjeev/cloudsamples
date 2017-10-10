@@ -42,7 +42,7 @@ import java.security.Principal;
 //      scope=webshop
 // step3: access api using token from product-api-service (resource server) through zuul gate. Send get request to http://localhost:8765/api/product/123
 // and set Authorization header to "Bearer token received in above step"  under Headers tab in postman(ex: Bearer 3d34258a-2aa3-481c-86a3-60a362447941).
-// internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri
+// internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri=http://localhost:9999/uaa/user
 //reference http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
 //question? why there is separate layer for resource server why can't annotate product-service as resource service.
 
