@@ -1,0 +1,11 @@
+# Make the application available at http://localhost:8081
+server:
+  port: 8081
+  contextPath: /
+
+# Configure the User Info Resource Server details
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9090/auth/user
+

@@ -1,0 +1,4 @@
+# Make the application available at http://localhost:9090/auth
+server:
+  port: 9090
+  contextPath: /auth
