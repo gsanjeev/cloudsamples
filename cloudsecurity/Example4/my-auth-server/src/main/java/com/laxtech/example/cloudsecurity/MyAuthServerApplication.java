@@ -3,6 +3,7 @@ package com.laxtech.example.cloudsecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*
+*******************************Example 2************************************************************************************************************
 This example uses authorization_code grant type and Spring MVC client(my-website) not the test clients like browser for authentication code and postman.
 Authentication code, and access token requests from my-website are taken care by following
     i)WebSecurityConfigurerAdapter implementation is annotated with @EnableOAuth2Sso
@@ -16,6 +17,10 @@ They share credentials with Authentication Provider (like spring security with m
 Login page and user consensus page resides in auth-server application not in client application.
 reference: https://blog.jdriven.com/2016/09/securing-application-landscape-spring-cloud-security-part-1/
 and https://bitbucket.org/rlippolis/cloud-security-example.git tag secure-website
+*******************************Example 4 (this) ************************************************************************************************************
+New application, my-rest-api is resource server annotated with @EnableResourceServer which is using Spring Security(@EnableWebSecurity) and OAuth2 protocol(application.yml)
+OAuth2RestTemplate in my-website application is passing user and access token from OAuth2ClientContext to my-rest-api. This is Single Sign On(SSO) Configuration. In example 3 we didn't pass
+access token to other application. In fact we manually passed access token from postman to resource server api.
  */
 @SpringBootApplication
 public class MyAuthServerApplication {
