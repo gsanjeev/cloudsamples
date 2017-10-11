@@ -28,7 +28,7 @@ my-website application is also working as gateway/ edgeserver (@EnableZuulProxy)
 route internalApi: Proxies the calls to http://localhost:8080/api/* to my-rest-api at http://localhost:8081/* and automatically includes our OAuth2 token in the request headers
 route externalApi: do not pass any authentication to the external API (application.yml)
 my-rest-api resource configured as @EnableGlobalMethodSecurity(prePostEnabled = true) and currentTime() api is authorized based on role.
-Can edge server (zuul) be deployed as separate sever like example 3?
+Can edge server (zuul) be deployed as separate sever like example 3? Finally I separated zuul gateway server out from my-website client application.
  */
 @SpringBootApplication
 public class MyAuthServerApplication {

@@ -1,0 +1,53 @@
+server:
+  port: 8765
+
+info:
+  component: Zuul Server
+
+spring:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9090/uaa/user
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+#zuul:
+#  ignoredServices: "*"
+#  prefix: /api
+#  routes:
+#    productapi:
+#      path: /product/**
+#      sensitiveHeaders:
+#      url: http://localhost:8071
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+
+# Proxies the calls to http://localhost:8080/api/* to our REST service at http://localhost:8081/*
+# and automatically includes our OAuth2 token in the request headers
+#TODO this can be organized better
+zuul:
+  routes:
+    internalApi:
+      path: /api/**
+      sensitiveHeaders:
+      url: http://localhost:8081
+    externalApi:
+      path: /external/**
+      url: http://some.external.webservice/
+
+# Make sure the OAuth2 token is only relayed when using the internal API,
+# do not pass any authentication to the external API
+proxy:
+  auth:
+    routes:
+      internalApi: oauth2
+      externalApi: none

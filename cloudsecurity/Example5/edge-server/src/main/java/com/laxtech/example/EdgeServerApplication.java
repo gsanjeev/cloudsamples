@@ -1,13 +1,17 @@
-package com.laxtech.example.mywebsite;
+package com.laxtech.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-public class MyWebsiteApplication {
+@EnableZuulProxy
+public class EdgeServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyWebsiteApplication.class, args);
+		SpringApplication.run(EdgeServerApplication.class, args);
+
+		//new SpringApplicationBuilder(EdgeServerApplication.class).web(true).run(args);
 	}
 }
+
