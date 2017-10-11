@@ -1,11 +1,11 @@
 package com.laxtech.example.cloudsecurity.controller;
 
 import java.util.HashMap;
-import java.util.Map;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+        import java.util.Map;
+        import org.springframework.security.core.authority.AuthorityUtils;
+        import org.springframework.security.oauth2.provider.OAuth2Authentication;
+        import org.springframework.web.bind.annotation.RequestMapping;
+        import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Because this application is also a User Info Resource Server, we expose info about the logged in user at:
@@ -31,4 +31,5 @@ public class ResourceController {
         return userDetails;
     }
 }
+
 

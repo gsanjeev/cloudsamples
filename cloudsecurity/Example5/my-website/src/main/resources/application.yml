@@ -18,3 +18,22 @@ security:
 time:
   url: http://localhost:8081/time
 
+# Proxies the calls to http://localhost:8080/api/* to our REST service at http://localhost:8081/*
+# and automatically includes our OAuth2 token in the request headers
+zuul:
+  routes:
+    internalApi:
+      path: /api/**
+      url: http://localhost:8081
+    externalApi:
+      path: /external/**
+      url: http://some.external.webservice/
+
+# Make sure the OAuth2 token is only relayed when using the internal API,
+# do not pass any authentication to the external API
+proxy:
+  auth:
+    routes:
+      internalApi: oauth2
+      externalApi: none
+

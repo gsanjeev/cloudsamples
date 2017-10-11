@@ -1,13 +1,10 @@
 package com.laxtech.example.cloudsecurity.controller;
-import java.security.Principal;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+    import java.time.LocalTime;
+            import java.time.format.DateTimeFormatter;
+            import org.springframework.security.access.prepost.PreAuthorize;
+            import org.springframework.web.bind.annotation.RequestMapping;
+            import org.springframework.web.bind.annotation.RestController;
 
 /**
  * REST Controller that serves the current time at:
@@ -16,15 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TimeRestController {
-    private static final Logger LOG = LoggerFactory.getLogger(TimeRestController.class);
 
+    // Only users with the role ROLE_ADMIN are allowed to retrieve the time
     @RequestMapping(value = "/time")
-    public String currentTime(@RequestHeader(value="Authorization") String authorizationHeader,
-                              Principal currentUser) {
-        String time = LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME);
-        LOG.info("currentTime api: User={}, Auth={}, current time={}", currentUser.getName(), authorizationHeader, time);//log for testing only.
+    @PreAuthorize("hasRole('ADMIN')")
+    public String currentTime() {
+        return LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME);
+    }
+}
 
-        return time;
-    }
-    }
 

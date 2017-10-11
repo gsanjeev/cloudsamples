@@ -18,6 +18,7 @@ Login page and user consensus page resides in auth-server application not in cli
 reference: https://blog.jdriven.com/2016/09/securing-application-landscape-spring-cloud-security-part-1/
 and https://bitbucket.org/rlippolis/cloud-security-example.git tag secure-website
 *******************************Example 4 (this) ************************************************************************************************************
+**tag -- secure-website-and-rest-api -- Make sure My Website passes the OAuth2 access token to My REST API when fetching the time******************************
 New application, my-rest-api is resource server annotated with @EnableResourceServer which is using Spring Security(@EnableWebSecurity) and OAuth2 protocol(application.yml)
 OAuth2RestTemplate in my-website application is passing user and access token from OAuth2ClientContext to my-rest-api. This is Single Sign On(SSO) Configuration. In example 3 we didn't pass
 access token to other application. In fact we manually passed access token from postman to resource server api.

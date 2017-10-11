@@ -8,3 +8,4 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9090/auth/user
+

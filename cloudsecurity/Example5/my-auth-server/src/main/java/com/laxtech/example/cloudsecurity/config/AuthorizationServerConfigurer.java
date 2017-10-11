@@ -1,10 +1,10 @@
 package com.laxtech.example.cloudsecurity.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+        import org.springframework.core.annotation.Order;
+        import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
+        import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+        import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
 /**
  * Our configuration for the OAuth2 Authorization Server.
@@ -37,4 +37,5 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     }
 
 }
+
 
