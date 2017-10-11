@@ -1,18 +1,12 @@
 package com.laxtech.example.mywebsite.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.oauth2.client.OAuth2RestOperations;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
+        import org.springframework.stereotype.Controller;
+        import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.ResponseBody;
         import org.springframework.web.client.RestOperations;
         import org.springframework.web.servlet.ModelAndView;
-
-import java.security.Principal;
 
 /**
  * Web MVC Controller serving two pages:
@@ -22,7 +16,7 @@ import java.security.Principal;
  */
 @Controller
 public class MyWebsiteController {
-    private static final Logger LOG = LoggerFactory.getLogger(MyWebsiteController.class);
+
     @Value("${time.url}")
     private String timeUrl;
 
@@ -56,7 +50,6 @@ public class MyWebsiteController {
      */
     private String getCurrentTime() {
         try {
-            LOG.info("getCurrentTime(): Auth={}", ((OAuth2RestOperations)restOperations).getAccessToken());//log for testing only.
             return restOperations.getForObject(timeUrl, String.class);
         } catch (Exception e) {
             return e.getMessage();
