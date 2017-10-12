@@ -21,11 +21,10 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                // All requests need authentication
-                .anyRequest().authenticated()
+                    // All requests need authentication
+                    .anyRequest().authenticated()
                 .and()
-                // We are trying to be stateless, so never create a session
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                    // We are trying to be stateless, so never create a session
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 }
-

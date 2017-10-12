@@ -1,15 +1,15 @@
 package com.laxtech.example.cloudsecurity.controller;
 
-    import java.security.Principal;
-    import java.time.LocalTime;
-            import java.time.format.DateTimeFormatter;
+import java.security.Principal;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
-    import org.slf4j.Logger;
-    import org.slf4j.LoggerFactory;
-    import org.springframework.security.access.prepost.PreAuthorize;
-    import org.springframework.web.bind.annotation.RequestHeader;
-    import org.springframework.web.bind.annotation.RequestMapping;
-            import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * REST Controller that serves the current time at:
@@ -31,5 +31,3 @@ public class TimeRestController {
         return time;
     }
 }
-
-
