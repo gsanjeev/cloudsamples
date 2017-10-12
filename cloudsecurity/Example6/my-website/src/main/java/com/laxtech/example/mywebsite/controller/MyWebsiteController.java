@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * Web MVC Controller serving two pages:
  *
@@ -51,6 +54,7 @@ public class MyWebsiteController {
     private String getCurrentTime() {
         try {
             return restOperations.getForObject(timeUrl, String.class);
+            //return LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME);
         } catch (Exception e) {
             return e.getMessage();
         }

@@ -31,6 +31,8 @@ my-rest-api resource configured as @EnableGlobalMethodSecurity(prePostEnabled = 
 Can edge server (zuul) be deployed as separate sever like example 3? Finally I separated zuul gateway server out from my-website client application.
 *******************************Example 6 (this) ************************************************************************************************************
 **tag -- stateless-security-with-jwt--Use JSON Web Tokens (JWT) in our REST API, to enable stateless security, instead of checking My Auth Server for every request received from My Website.******************************
+none of client app have userInfoUri(/uaa/user) configuration instead they have public key configuration. Token has user detail and bigger in size.
+AuthServer has configured with private key/certificate stored in keystore which is used by JWT access token converter. Access token is coded with base 64.
  */
 @SpringBootApplication
 public class MyAuthServerApplication {
