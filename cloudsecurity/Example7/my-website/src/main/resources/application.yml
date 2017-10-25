@@ -13,7 +13,7 @@ security:
       clientId: myauthserver
       clientSecret: verysecretpassword
     resource:
-#      userInfoUri: http://localhost:9090/auth/user
+      userInfoUri: http://localhost:9090/auth/user
       jwt:
         keyValue: |
           -----BEGIN PUBLIC KEY-----

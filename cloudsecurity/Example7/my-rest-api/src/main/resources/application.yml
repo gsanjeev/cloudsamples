@@ -18,7 +18,10 @@ security:
           eNLkfwVfepKWa9jPELemtTLf1MkMppU+Lj1UNCr8x4Y6EupRDZhplVNtqYsPNDpO
           7wIDAQAB
           -----END PUBLIC KEY-----
-
+spring:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9090/uaa/user
 # External OAuth2 provider configuration - Google
 google:
   resource:

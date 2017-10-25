@@ -15,13 +15,89 @@ jwt:
       password: keypassword
 
 # External OAuth2 provider configuration - Google
+#google:
+#  client:
+#    clientId: 453576278946-ciajb5l2vahjte6o5e0u2htuukfktuu7.apps.googleusercontent.com
+#    clientSecret: KvwhvtwOwLWTMssXiN1orjni
+#    scope: email,profile
+#    accessTokenUri: https://accounts.google.com/o/oauth2/token
+#    userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+#    clientAuthenticationScheme: form
+#  resource:
+#    userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+
 google:
   client:
-    clientId: 453576278946-ciajb5l2vahjte6o5e0u2htuukfktuu7.apps.googleusercontent.com
-    clientSecret: KvwhvtwOwLWTMssXiN1orjni
+    clientId: 528773657975-sb02sd08luuhd1ekft7jqc36pcunrkr6.apps.googleusercontent.com
+    clientSecret: 2mcniAtOsQ53nn0OPvQZWjY0
     scope: email,profile
     accessTokenUri: https://accounts.google.com/o/oauth2/token
     userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
     clientAuthenticationScheme: form
   resource:
     userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+
+
+{"web":{"client_id":"528773657975-sb02sd08luuhd1ekft7jqc36pcunrkr6.apps.googleusercontent.com","project_id":"springcloudsamples",
+"auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://accounts.google.com/o/oauth2/token",
+"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"2mcniAtOsQ53nn0OPvQZWjY0",
+"redirect_uris":["http://localhost:8080/"]}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

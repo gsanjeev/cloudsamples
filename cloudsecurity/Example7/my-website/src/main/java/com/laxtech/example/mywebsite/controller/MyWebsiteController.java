@@ -61,8 +61,8 @@ public class MyWebsiteController {
         try {
             LOG.info("getCurrentTime(): Auth={}", ((OAuth2RestOperations)restOperations).getAccessToken());//log for testing only.
 
-            //return restOperations.getForObject(timeUrl, String.class);
-            return LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME);
+            return restOperations.getForObject(timeUrl, String.class);
+            //return LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME);
         } catch (Exception e) {
             return e.getMessage();
         }

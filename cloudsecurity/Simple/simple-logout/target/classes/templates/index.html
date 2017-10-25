@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Simple Logout - Index</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body >
+	<h2>Login</h2>
+	<div class="container" >
+		With Google: <a href="/login">click here</a>
+	</div>
+	<div class="container" th:if="${isAuthenticated} == true">
+		Logged in as:<span th:text="${user}"></span>
+		<form action="#" th:action="@{/logout}" method="post">
+			<p><input type="submit" value="Logout" class="btn btn-primary" /> </p>
+		</form>
+	</div>
+
+</body>
+</html>
