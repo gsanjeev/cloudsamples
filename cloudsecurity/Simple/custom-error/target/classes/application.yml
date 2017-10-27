@@ -33,8 +33,8 @@ user:
 security:
   oauth2:
     client:
-      clientId: cdf89792854ec0dd6579
-      clientSecret: 988bee4d6f48524cfc7e85afcc6c00f22df0c593
+      clientId: bd1c0a783ccdd1c9b9e4
+      clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
       accessTokenUri: https://github.com/login/oauth/access_token
       userAuthorizationUri: https://github.com/login/oauth/authorize
       clientAuthenticationScheme: form
@@ -43,4 +43,7 @@ security:
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: INFO
+
+#            clientId: cdf89792854ec0dd6579
+#            clientSecret: 988bee4d6f48524cfc7e85afcc6c00f22df0c593

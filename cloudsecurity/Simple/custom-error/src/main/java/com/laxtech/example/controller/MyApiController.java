@@ -16,7 +16,7 @@ public class MyApiController {
 	@RequestMapping("/user")
 	public Principal user(Principal principal) {
 
-		LOG.info("user(): principal1={}", principal);
+		LOG.info("user(): principal={}", principal);
 
 		return principal;
 	}

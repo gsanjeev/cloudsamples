@@ -1,5 +1,8 @@
 package com.laxtech.example.config;
 
+import com.laxtech.example.controller.MyWebsiteController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.AuthoritiesExtractor;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +29,7 @@ import java.util.Map;
 @Order(3)
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
+    private static final Logger LOG = LoggerFactory.getLogger(MyWebsiteController.class);
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -43,20 +47,24 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public OAuth2RestTemplate oauth2RestTemplate(OAuth2ProtectedResourceDetails resource, OAuth2ClientContext context) {
         return new OAuth2RestTemplate(resource, context);
     }
-//
-//    @Bean
-//    public AuthoritiesExtractor authoritiesExtractor(OAuth2RestOperations template) {
-//        return map -> {
-//            String url = (String) map.get("organizations_url");
-//            @SuppressWarnings("unchecked")
-//            List<Map<String, Object>> orgs = template.getForObject(url, List.class);
-//            if (orgs.stream()
-//                    .anyMatch(org -> "spring-projects".equals(org.get("login")))) {
-//                return AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
-//            }
-//            throw new BadCredentialsException("Not in Spring Projects origanization");
-//        };
-//    }
+
+/*    @Bean
+    public AuthoritiesExtractor authoritiesExtractor(OAuth2RestOperations template) {
+        return map -> {
+            String url = (String) map.get("organizations_url");
+            LOG.info("authoritiesExtractor(): url={}", url);
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> orgs = template.getForObject(url, List.class);
+            LOG.info("authoritiesExtractor(): orgs={}", orgs);
+            if (orgs.stream()
+                    .anyMatch(org -> "spring-projects".equals(org.get("login")))) {
+                LOG.info("authoritiesExtractor(): orgs={}", orgs);
+                LOG.info("authoritiesExtractor(): AuthorityUtils.commaSeparatedStringToAuthorityList()={}", AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
+                return AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
+            }
+            throw new BadCredentialsException("Not in Spring Projects origanization");
+        };
+    }*/
 
 }
 
