@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "make",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "model",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20180312185834",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "car",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "CarService",
+    "searchEngine": "elasticsearch"
+}

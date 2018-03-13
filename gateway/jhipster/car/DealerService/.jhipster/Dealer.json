@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180313052536",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "dealer",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "DealerService",
+    "searchEngine": "elasticsearch"
+}
