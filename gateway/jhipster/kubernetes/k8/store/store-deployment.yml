@@ -35,11 +35,20 @@ spec:
         resources:
           requests:
             memory: "256Mi"
-            cpu: "250m"
+            cpu: "500m"
           limits:
             memory: "512Mi"
             cpu: "1"
         ports:
         - name: web
           containerPort: 8081
+        readinessProbe:
+          httpGet:
+            path: /management/health
+            port: web
+        livenessProbe:
+          httpGet:
+            path: /management/health
+            port: web
+          initialDelaySeconds: 180
 

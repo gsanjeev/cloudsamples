@@ -6,10 +6,10 @@
     ],
     "directoryPath": "../",
     "serviceDiscoveryType": "eureka",
-    "jwtSecretKey": "31abd8a35f09194edcf80008933a794f7e0a627d",
+    "jwtSecretKey": "c3345fe648dcba205fcc22405213d9f05826bce9",
     "dockerRepositoryName": "gsanjeev",
     "dockerPushCommand": "docker push",
     "kubernetesNamespace": "default",
-    "kubernetesServiceType": "NodePort"
+    "kubernetesServiceType": "LoadBalancer"
   }
 }
