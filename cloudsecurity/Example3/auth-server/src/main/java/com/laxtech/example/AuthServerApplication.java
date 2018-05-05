@@ -45,6 +45,7 @@ import java.security.Principal;
 // internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri=http://localhost:9999/uaa/user
 //reference http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
 //question? why there is separate layer for resource server why can't annotate product-service as resource service.
+//answer:  Seprate layer product-api-service is upstream service like composite (facade) service. product-service(downstream service is not exposed to api gateway. this answer is not correct. example given in reference blog have 3 layers api layer, composite service layer and downstream microservices layer. so question remains why extra api microservice layer for security?
 
 @SpringBootApplication
 @RestController

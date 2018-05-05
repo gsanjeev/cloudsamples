@@ -12,6 +12,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 // path could be mapped to either url or serviceid
 // From browser call http://localhost:8079/api/server/rest/hello/server
 //And http://localhost:8079/api/client/rest/hello/client
+//In real senario client service calls server api through 
+//api gateway (zuul) this example does not show that.
 
 public class EdgeServerApplication {
 
