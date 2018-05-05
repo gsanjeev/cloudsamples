@@ -24,7 +24,7 @@ import java.security.Principal;
 // as is to resource server apis. Spring MVC inject authentication header and principal parameter in resource api method call
 // step1: get authorization code(optional) from auth-server.
 // use url http://localhost:9999/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com&scope=webshop& state=97536
-// step2: get token from auth-server.
+// step2: get token from auth-server url using url http://localhost:9999/uaa/oauth/token. implicit grant type(ii) provides token in single step for quick testing product-api
 //  i) use case: grant type = authorization code. Send post request with basic authentication (user = acme and password= acmesecret) , content type application/x-www-form-urlencoded and set following field in body
 //      grant_type=authorization_code
 //      client_id=acme
@@ -45,7 +45,10 @@ import java.security.Principal;
 // internal step: resource server contact auth-server for token verification and get the user detail using userInfoUri=http://localhost:9999/uaa/user
 //reference http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
 //question? why there is separate layer for resource server why can't annotate product-service as resource service.
-//answer:  Seprate layer product-api-service is upstream service like composite (facade) service. product-service(downstream service is not exposed to api gateway. this answer is not correct. example given in reference blog have 3 layers api layer, composite service layer and downstream microservices layer. so question remains why extra api microservice layer for security?
+//answer:  Seprate layer product-api-service is upstream service like composite (facade) service. product-service(downstream service is not exposed to api gateway. this answer is not correct.
+// example given in reference blog have 3 layers api layer, composite service layer and downstream microservices layer. so question remains why extra api microservice layer for security?
+// next answer is: @EnableOAuth2Resource (is extended from WebSecurityConfigurerAdapter) I believe this makes api secure ie client need to send valid security token.
+// Composite microservice can be called without valid token as well. This may be useful for internal clients(microservices).
 
 @SpringBootApplication
 @RestController
@@ -60,6 +63,7 @@ public class AuthServerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AuthServerApplication.class, args);
+        System.out.println("Auth Server");
     }
 
 
