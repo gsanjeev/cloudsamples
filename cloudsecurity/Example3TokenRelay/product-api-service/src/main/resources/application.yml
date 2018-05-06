@@ -1,0 +1,12 @@
+server:
+  port: 8071
+
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+
+logging:
+  level:
+    se.callista: INFO

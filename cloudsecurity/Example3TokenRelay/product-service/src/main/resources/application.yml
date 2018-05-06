@@ -1,0 +1,7 @@
+server:
+  port: 8072
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
